@@ -236,7 +236,10 @@ class DataSet(object):
     ########################
     # PUT YOUR CODE HERE  #
     ########################
-    raise NotImplementedError
+    x1 = tf.reshape(features["x1"], [batch_size, 32, 32, 3])
+    x2 = tf.reshape(features["x2"], [batch_size, 32, 32, 3])
+    labels = tf.reshape(features["labels"], [batch_size])
+
     ########################
     # END OF YOUR CODE    #
     ########################
