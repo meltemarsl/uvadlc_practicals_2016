@@ -156,6 +156,11 @@ def create_dataset(source_data, num_tuples = 500, batch_size = 128, fraction_sam
     ########################
     # PUT YOUR CODE HERE  #
     ########################
+    X_1, X_2, Y = next_batch(self, batch_size, fraction_same)
+    dset = list(zip((X_1, X_2),Y))
+      
+
+
     raise NotImplementedError
     ########################
     # END OF YOUR CODE    #
@@ -239,7 +244,7 @@ class DataSet(object):
     
     x1 = tf.reshape(features["x1"], [batch_size, 32, 32, 3])
     x2 = tf.reshape(features["x2"], [batch_size, 32, 32, 3])
-    labels = tf.reshape(features["labels"], [batch_size, 32, 32, 3])
+    labels = tf.reshape(features["labels"], [batch_size])
 
     raise NotImplementedError
     ########################
